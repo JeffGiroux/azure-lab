@@ -38,5 +38,5 @@ variable "int_address_prefix" {
 variable "resourceOwner" {
   type        = string
   default     = null
-  description = "This is a tag used for object creation. Example is last name."
+  description = "This is a tag used for object creation. Example is last name or email."
 }
