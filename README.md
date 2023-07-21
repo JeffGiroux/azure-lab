@@ -64,3 +64,69 @@ To run this Terraform template, perform the following steps:
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 <!-- markdownlint-enable no-inline-html -->
+
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 3.66.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 3.66.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | n/a |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [azurerm_network_security_group.external](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group) | resource |
+| [azurerm_network_security_group.internal](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group) | resource |
+| [azurerm_network_security_group.mgmt](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group) | resource |
+| [azurerm_resource_group.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group) | resource |
+| [azurerm_subnet.external](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet) | resource |
+| [azurerm_subnet.internal](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet) | resource |
+| [azurerm_subnet.mgmt](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet) | resource |
+| [azurerm_subnet_network_security_group_association.external](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet_network_security_group_association) | resource |
+| [azurerm_subnet_network_security_group_association.internal](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet_network_security_group_association) | resource |
+| [azurerm_subnet_network_security_group_association.mgmt](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet_network_security_group_association) | resource |
+| [azurerm_virtual_network.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network) | resource |
+| [random_id.buildSuffix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/id) | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_adminSrcAddr"></a> [adminSrcAddr](#input\_adminSrcAddr) | Allowed Admin source IP prefix | `string` | `"0.0.0.0/0"` | no |
+| <a name="input_ext_address_prefix"></a> [ext\_address\_prefix](#input\_ext\_address\_prefix) | External subnet address prefix | `string` | `"10.1.2.0/24"` | no |
+| <a name="input_int_address_prefix"></a> [int\_address\_prefix](#input\_int\_address\_prefix) | Internal subnet address prefix | `string` | `"10.1.3.0/24"` | no |
+| <a name="input_location"></a> [location](#input\_location) | Azure Location of the deployment | `string` | `"westus2"` | no |
+| <a name="input_mgmt_address_prefix"></a> [mgmt\_address\_prefix](#input\_mgmt\_address\_prefix) | Management subnet address prefix | `string` | `"10.1.1.0/24"` | no |
+| <a name="input_projectPrefix"></a> [projectPrefix](#input\_projectPrefix) | This value is inserted at the beginning of each Azure object (alpha-numeric, no special character) | `string` | `"demo"` | no |
+| <a name="input_resourceOwner"></a> [resourceOwner](#input\_resourceOwner) | This is a tag used for object creation. Example is last name or email. | `string` | `null` | no |
+| <a name="input_vnet_cidr"></a> [vnet\_cidr](#input\_vnet\_cidr) | CIDR IP Address range of the Virtual Network | `string` | `"10.1.0.0/16"` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_external_security_group_name"></a> [external\_security\_group\_name](#output\_external\_security\_group\_name) | External security group name |
+| <a name="output_external_subnet_addresses"></a> [external\_subnet\_addresses](#output\_external\_subnet\_addresses) | External subnet address prefix |
+| <a name="output_external_subnet_name"></a> [external\_subnet\_name](#output\_external\_subnet\_name) | External subnet name |
+| <a name="output_internal_security_group_name"></a> [internal\_security\_group\_name](#output\_internal\_security\_group\_name) | Internal security group name |
+| <a name="output_internal_subnet_addresses"></a> [internal\_subnet\_addresses](#output\_internal\_subnet\_addresses) | Internal subnet address prefix |
+| <a name="output_internal_subnet_name"></a> [internal\_subnet\_name](#output\_internal\_subnet\_name) | Internal subnet name |
+| <a name="output_mgmt_security_group_name"></a> [mgmt\_security\_group\_name](#output\_mgmt\_security\_group\_name) | Management security group name |
+| <a name="output_mgmt_subnet_addresses"></a> [mgmt\_subnet\_addresses](#output\_mgmt\_subnet\_addresses) | Management subnet address prefix |
+| <a name="output_mgmt_subnet_name"></a> [mgmt\_subnet\_name](#output\_mgmt\_subnet\_name) | Management subnet name |
+| <a name="output_resource_group"></a> [resource\_group](#output\_resource\_group) | Resource group name |
+| <a name="output_vnet"></a> [vnet](#output\_vnet) | VNet name |
+<!-- END_TF_DOCS -->
