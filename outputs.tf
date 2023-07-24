@@ -44,3 +44,11 @@ output "internal_security_group_name" {
   description = "Internal security group name"
   value       = azurerm_network_security_group.internal.name
 }
+output "winvm_mgmt_public_ip" {
+  description = "Windows VM public IP address for mgmt NIC"
+  value       = azurerm_public_ip.winvm_mgmt_pip.ip_address
+}
+output "winvm_ext_public_ip" {
+  description = "Windows VM public IP address for external NIC"
+  value       = azurerm_public_ip.winvm_ext_pip.ip_address
+}
