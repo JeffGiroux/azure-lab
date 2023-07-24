@@ -10,6 +10,10 @@ variable "location" {
   default     = "westus2"
   description = "Azure Location of the deployment"
 }
+variable "admin_password" {
+  type        = string
+  description = "Administrator password for VMs"
+}
 variable "adminSrcAddr" {
   type        = string
   description = "Allowed Admin source IP prefix"

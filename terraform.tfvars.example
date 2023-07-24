@@ -1,7 +1,8 @@
 # Azure Environment
-location      = "westus2"
-adminSrcAddr  = "0.0.0.0/0"
-resourceOwner = "fred"
+location       = "westus2"
+adminSrcAddr   = "0.0.0.0/0"
+admin_password = "Default12345!"
+resourceOwner  = "fred"
 
 # Prefix for objects being created
 projectPrefix = "mydemo123"
