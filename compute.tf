@@ -80,6 +80,7 @@ resource "azurerm_windows_virtual_machine" "winvm" {
     name                 = format("%s-winvm-disk", var.projectPrefix)
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
+    disk_size_gb         = "20"
   }
 
   source_image_reference {
